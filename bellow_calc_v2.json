@@ -1,0 +1,6 @@
+{
+  "packages": ["pandas", "openpyxl"],
+  "files": {
+    "BELLOW_CALCULATOR.xlsx": "./BELLOW_CALCULATOR.xlsx"
+  }
+}

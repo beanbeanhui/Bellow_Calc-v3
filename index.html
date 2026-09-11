@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🔢 Bellow Calculator 🔢</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.6.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2026.6.1/core.js"></script>
+</head>
+<body style="background-color: lightblue;">
+
+    <h1>🔢 Bellow Calculator 🔢</h1>
+    <p>Calculate the properties of a bellow...</p>
+
+    <label for="process_size">Process Size:</label>
+    <select id="process_size">
+        <option value="R05T">R05T</option>
+        <option value="R10T">R10T</option>
+        <option value="R15T">R15T</option>
+        <option value="R15P">R15P</option>
+        <option value="R20P">R20P</option>
+        <option value="R25P">R25P</option>
+        <option value="R30P">R30P</option>
+        <option value="R40P">R40P</option>
+    </select>
+
+    <br><br>
+
+    <label for="corrugation">Corrugation (W):</label>
+    <select id="corrugation">
+        <!-- Populated dynamically by PyScript based on Process Size -->
+    </select>
+
+    <br><br>
+
+    <label for="load_cycles">Number of Load Cycles:</label>
+
+    <select id="load_cycles">
+    <option value="10000">10000</option>
+    <option value="4000">4000</option>
+    <option value="1700">1700</option>
+    <option value="1000">1000</option>
+    </select>
+
+    <br><br>
+
+    <label for="P">Pressure (bar): </label>
+    <input type="number" id="P" step="any" placeholder="Enter pressure in bar" />
+
+    <button id="calculate-button">Calculate Length</button>
+
+    <br><br>
+
+    <div id="output" style="margin-top: 15px; font-weight: bold;"></div>
+
+    <hr>
+
+    <br><br>
+
+    <label for="process_size2">Process Size:</label>
+    <select id="process_size2">
+        <option value="R05T">R05T</option>
+        <option value="R10T">R10T</option>
+        <option value="R15T">R15T</option>
+        <option value="R15P">R15P</option>
+        <option value="R20P">R20P</option>
+        <option value="R25P">R25P</option>
+        <option value="R30P">R30P</option>
+        <option value="R40P">R40P</option>
+    </select>
+
+    <br><br>
+
+    <label for="load_cycles2">Number of Load Cycles:</label>
+
+    <select id="load_cycles2">
+    <option value="10000">10000</option>
+    <option value="4000">4000</option>
+    <option value="1700">1700</option>
+    <option value="1000">1000</option>
+    </select>
+
+    <br><br>
+    
+    <label for="length2">Desired Length: </label>
+    <input type="number" id="length2" step="any" placeholder="Enter desired length (mm)" />
+
+    <br><br>
+
+    <label for="P2">Pressure (bar): </label>
+    <input type="number" id="P2" step="any" placeholder="Enter pressure in bar" />
+
+    <button id="calculate-button2">Calculate Corrugation</button>
+
+    <br><br>
+
+    <div id="output2" style="margin-top: 15px; font-weight: bold;"></div>
+
+    <footer>
+        <div id="creds" style="margin-top: 12px; font-weight: normal;"></div>
+        <details>
+            <summary>Click to see references</summary>
+            <p>Note: The recommended corrugation is based on the closest available option from the Excel data and Witzenmann Bellow Catalogue.<br>Temperature is calculated using linear interpolation (small scale data) from the LN2 properties table. <br> Source: Eric W. Lemmon, Ian H. Bell, Marcia L. Huber, and Mark O. McLinden, "Thermophysical Properties of Fluid Systems" in NIST Chemistry WebBook, NIST Standard Reference Database Number 69, Eds. P.J. Linstrom and W.G. Mallard, National Institute of Standards and Technology, Gaithersburg MD, 20899, https://doi.org/10.18434/T4D303, (retrieved August 6, 2026).</p>
+        </details>
+        
+    </footer>
+    
+    <script type="py" src="Bellow_Calc v2.py" config="bellow_calc_v2.json"></script>
+</body>
+</html>
